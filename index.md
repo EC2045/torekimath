@@ -263,176 +263,176 @@
 
 2次元数の足し算：
 
-```latex
+$$
 (a,b)+(c,d)=(a+c,\ b+d)
-```
+$$
 
 2次元数の引き算：
 
-```latex
+$$
 (a,b)-(c,d)=(a-c,\ b-d)
-```
+$$
 
 ### 小3　分配法則と分解
 
 分配法則：
 
-```latex
+$$
 a(b+c)=ab+ac
-```
+$$
 
 11〜13の段（10と一の位に分ける）：
 
-```latex
+$$
 (10+a)(10+b)=100+10(a+b)+ab
-```
+$$
 
 2次元数の分解：
 
-```latex
+$$
 (a,b)=(a,0)+(0,b)
-```
+$$
 
 ### 小4　展開と2次元数の掛け算
 
 展開の公式：
 
-```latex
+$$
 (x+y)^2=x^2+2xy+y^2
-```
+$$
 
-```latex
+$$
 (x+a)(x+b)=x^2+(a+b)x+ab
-```
+$$
 
 分数の足し算（通分）：
 
-```latex
+$$
 \frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}
-```
+$$
 
 基本単位 `(0,1)` を2回掛ける：
 
-```latex
+$$
 (0,1)\times(0,1)=(-1,0)
-```
+$$
 
 2次元数の掛け算：
 
-```latex
+$$
 (a,b)\times(c,d)=(ac-bd,\ ad+bc)
-```
+$$
 
 比例（kは決まった数）：
 
-```latex
+$$
 y=kx
-```
+$$
 
 平方の求め方（14²〜20²）：
 
-```latex
+$$
 (10+a)^2=100+20a+a^2
-```
+$$
 
-```latex
+$$
 (20-a)^2=400-40a+a^2
-```
+$$
 
 ### 小5　回転・図形・長さ
 
 交換法則：
 
-```latex
+$$
 (a,b)\times(c,d)=(c,d)\times(a,b)
-```
+$$
 
 90°回転（`(0,1)` を掛ける）：
 
-```latex
+$$
 (x,y)\times(0,1)=(-y,\ x)
-```
+$$
 
 180°回転と270°回転：
 
-```latex
+$$
 (x,y)\mapsto(-x,\ -y)
-```
+$$
 
-```latex
+$$
 (x,y)\mapsto(y,\ -x)
-```
+$$
 
 拡大・縮小（kは倍率）：
 
-```latex
+$$
 (x,y)\times(k,0)=(kx,\ ky)
-```
+$$
 
 面積（底辺a、上底a・下底b、高さh）：
 
-```latex
+$$
 S=ah\quad(\text{平行四辺形}),\qquad S=\frac{ah}{2}\quad(\text{三角形}),\qquad S=\frac{(a+b)h}{2}\quad(\text{台形})
-```
+$$
 
 円周と円の面積（ℓは円周、dは直径、rは半径）：
 
-```latex
+$$
 \ell=3.14\,d,\qquad S=3.14\,r^2
-```
+$$
 
 原点から `(x,y)` までの距離Dの2乗：
 
-```latex
+$$
 D^2=x^2+y^2
-```
+$$
 
 反比例（kは決まった数）：
 
-```latex
+$$
 xy=k
-```
+$$
 
 平方の求め方（21²〜25²）：
 
-```latex
+$$
 (20+a)^2=400+40a+a^2
-```
+$$
 
 ### 小6　割り算と平方根
 
 分数の掛け算・割り算：
 
-```latex
+$$
 \frac{a}{b}\times\frac{c}{d}=\frac{ac}{bd},\qquad \frac{a}{b}\div\frac{c}{d}=\frac{a}{b}\times\frac{d}{c}=\frac{ad}{bc}
-```
+$$
 
 裏返し：
 
-```latex
+$$
 (c,d)\mapsto(c,-d)
-```
+$$
 
 襷（`c²+d²`）の発見：
 
-```latex
+$$
 (c,d)\times(c,-d)=(c^2+d^2,\ 0)
-```
+$$
 
 2次元数の割り算（襷＝c²+d²）：
 
-```latex
+$$
 (a,b)\div(c,d)=\left(\frac{ac+bd}{c^2+d^2},\ \frac{bc-ad}{c^2+d^2}\right)
-```
+$$
 
 平方根の定義と、距離：
 
-```latex
+$$
 (\sqrt{a})^2=a,\qquad D=\sqrt{x^2+y^2}
-```
+$$
 
 体積（Sは底面積、hは高さ）：
 
-```latex
+$$
 V=Sh\quad(\text{柱}),\qquad V=abc\quad(\text{直方体})
-```
+$$
