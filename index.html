@@ -93,33 +93,146 @@ const gradeSixHints = [
   'まず たて×よこ で底面積を出そう。次に高さを掛けてみよう。'
 ];
 
-function renderGradeSixTopics(topics) {
+const lessonSteps = [
+  [
+    [
+      ['10こずつ まとめよう', '36こを、10こずつの まとまりに してみよう。10こが3つできて、6こ あまるよ。', '36 = 30 + 6'],
+      ['あと いくつで10？', '7+5を かんがえよう。7に3を たすと10。だから、5を3と2に わけるよ。', '7 + 3 = 10\n5 = 3 + 2'],
+      ['のこりを たそう', 'まず7に3を たして10。つぎに、のこりの2を たすよ。', '7 + 5 = 7 + 3 + 2\n= 10 + 2 = 12']
+    ],
+    [
+      ['まんなかから はじめよう', '方眼の はじまりは (0,0)。ここから、右に2、上に3の ばしょへ いくよ。', '(0, 0) から スタート'],
+      ['右へ 2マス', 'まず右へ2マス。まだ上には すすんでいないから、たては0だよ。', '(0, 0) → (2, 0)'],
+      ['上へ 3マス', 'いまの ばしょから 上に3マス。よこを先に、たてを後に 書こう。', '(2, 0) → (2, 3)\n(よこ, たて) = (2, 3)']
+    ],
+    [
+      ['まず10まで ひこう', '14−6を かんがえよう。14から4を ひくと10。6のうち、あと2を ひけばいいね。', '14 − 4 = 10\n6 = 4 + 2'],
+      ['のこりを ひこう', '10から のこりの2を ひくと8。これで6を ぜんぶ ひいたよ。', '14 − 6 = 14 − 4 − 2\n= 10 − 2 = 8'],
+      ['先に くる人を えらぼう', '「う」と「え」が ならぶよ。「う」が先なら「うえ」。「え」が先なら「えう」。先に くる人で わけると、ぜんぶ 数えられるよ。', 'うえ・えう → 2とおり']
+    ]
+  ],
+  [
+    [
+      ['右と上、左と下', '原点から右へ行くと横はプラス、左ならマイナス。上へ行くと縦はプラス、下ならマイナスだよ。', '右に2、下に1 → (2, −1)'],
+      ['まず0まで もどる', '右に2の場所から左へ5進むよ。左へ2進むと原点。あと何マス進むかな？', '2 − 2 = 0\n5 − 2 = 3'],
+      ['0をこえて 左へ', '左へあと3進むと、原点の左に3。原点より左なので、−3と書くよ。', '2 − 5 = 0 − 3 = −3']
+    ],
+    [
+      ['横の数だけ 足す', '(2,3) に (4,1) を足そう。まずは1つ目の数どうし。横は2から右へ4だから6。', '横：2 + 4 = 6'],
+      ['縦の数だけ 足す', '次は2つ目の数どうし。縦は3から上へ1だから4。横、縦の順で答えを書こう。', '縦：3 + 1 = 4\n(2, 3) + (4, 1) = (6, 4)'],
+      ['引き算も 横と縦に分ける', '(2,3) から (4,1) を引こう。横は2から左へ4。縦は3から下へ1だよ。', '横：2 − 4 = −2\n縦：3 − 1 = 2\n(2, 3) − (4, 1) = (−2, 2)']
+    ],
+    [
+      ['同じ数を 何回足す？', '4こずつ入ったふくろが3つ。4を3回足す計算は、4×3と書けるよ。', '4 + 4 + 4 = 4×3 = 12'],
+      ['同じ数ずつ 分けよう', '12こを3人に1こずつくばるよ。1回くばると3こ使う。4回で12こ使うから、1人分は4こ。', '3×4 = 12 → 12÷3 = 4'],
+      ['集めた数を くらべる', '赤が4こ、青が2こ。赤に4マス、青に2マスぬると、赤の棒が2マス長くなるね。', '赤4こ − 青2こ = 2こ']
+    ]
+  ],
+  [
+    [
+      ['かっこの中から計算する', '3×(4+2) は、まず4と2を足す。次にそのまとまりを3倍するよ。', '3×(4+2) = 3×6 = 18'],
+      ['分けて掛けても同じ', '4こと2こをひとまとめにした組が3組。4こずつの分も、2こずつの分も、どちらも3組あるよ。', '3×(4+2) = 3×4 + 3×2\n= 12 + 6 = 18'],
+      ['大きな数を分けてみる', '14×12は、14を10と4に分けると計算しやすい。10にも4にも12を掛けて、最後に足そう。', '14×12 = 10×12 + 4×12\n= 120 + 48 = 168']
+    ],
+    [
+      ['分からない数を x と書く', 'x+4=10。□+4=10の□を x と書いたものだよ。足した4を元に戻せば、xが分かる。', 'x + 4 = 10'],
+      ['式の両側から同じ数を引く', '左右から4ずつ引けば、左右は同じまま。左には x だけが残るね。', 'x + 4 − 4 = 10 − 4\nx = 6'],
+      ['2次元数も分けられる', '(2,4) は、横だけの (2,0) と縦だけの (0,4) を合わせた数。横と縦を別々に使えるよ。', '(2, 4) = (2, 0) + (0, 4)']
+    ],
+    [
+      ['右は上へ、上は左へ', '原点を中心に、時計と反対に90°回すよ。右向きの矢印は上向き。上向きの矢印は左向きになる。', '(1, 0) → (0, 1)\n(0, 1) → (−1, 0)'],
+      ['2本の矢印を別々に回す', '(2,1) は「右へ2、上へ1」。回すと「上へ2、左へ1」になるよ。', '(2, 0) → (0, 2)\n(0, 1) → (−1, 0)'],
+      ['回した矢印を合わせる', '左へ1、上へ2なので、答えは (−1,2)。もとの縦の符号を変えて新しい横に、もとの横を新しい縦にするよ。', '(2, 1) → (−1, 2)\n(x, y) → (−y, x)']
+    ],
+    [
+      ['10dLを1Lにまとめる', '1dLは1Lを10等分したうちの1つ。3dLなら、その小さなまとまりが3つだよ。', '1dL = 0.1L\n3dL = 3÷10 L = 0.3L'],
+      ['組み合わせを1つずつ数える', 'シャツが赤・青の2枚、ズボンが白・黒の2本。赤シャツにズボンが2通り、青シャツにも2通りあるね。', '赤＋白、赤＋黒、青＋白、青＋黒\n2×2 = 4通り']
+    ]
+  ],
+  [
+    [
+      ['マイナスを掛けると向きが変わる', '−3は左向き。そこに−2を掛けると、大きさが2倍になって、向きが右に変わるよ。', '(−3)×2 = −6\n(−3)×(−2) = 6'],
+      ['かっこを1つずつ開く', '(x+1)(x+4) を、左の x と1に分ける。両方に右の (x+4) を掛けてから、もう一度分けよう。', 'x(x+4) + 1(x+4)\n= x² + 4x + x + 4'],
+      ['同じ種類の項をまとめる', '4xと x を合わせて5x。逆に、ばらばらの式を掛け算の形に戻すのが因数分解だよ。', 'x² + 4x + x + 4 = x² + 5x + 4\nx² + 5x + 4 = (x+1)(x+4)']
+    ],
+    [
+      ['(0,1) を掛けて1回転の4分の1', '小3でやった反時計回り90°を、ここからは (0,1) を掛けることで表すよ。', '(2, 1) × (0, 1) = (−1, 2)'],
+      ['2回掛けると180°', '右に1の (1,0) を90°回すと上に1。もう90°回すと左に1。だから (0,1) 同士の積は (−1,0) だよ。', '(1, 0) → (0, 1) → (−1, 0)'],
+      ['普通の数を掛けるとき', '横だけの (3,0) は普通の3として使うよ。(2,1) を3倍するなら、横と縦をそれぞれ3倍しよう。', '(2, 1) × (3, 0) = (6, 3)']
+    ],
+    [
+      ['両方を横と縦に分ける', '(2,1)×(3,2) を計算しよう。左の横と縦のそれぞれに、右の横と縦を掛けるので、積は4つ。', '[(2, 0) + (0, 1)] × [(3, 0) + (0, 2)]'],
+      ['横に残る2つの積', '横同士は普通の掛け算。縦同士は (0,1) を2回掛ける形なので、横向きになって符号がマイナスになるよ。', '(2, 0)×(3, 0) = (6, 0)\n(0, 1)×(0, 2) = (−2, 0)'],
+      ['縦に残る2つの積', '横と縦を掛けると、縦が残る。普通の数で縦を何倍するか考えよう。', '(2, 0)×(0, 2) = (0, 4)\n(0, 1)×(3, 0) = (0, 3)'],
+      ['横と縦をそれぞれ足す', '横は6−2、縦は4+3。文字で書くときも、この4つの積を同じ向きごとに集めるよ。', '(2, 1)×(3, 2) = (6−2, 4+3) = (4, 7)\n(a,b)×(c,d) = (ac−bd, ad+bc)']
+    ],
+    [
+      ['分数は同じ大きさに区切る', '1/3と1/6を足すよ。1/3は1/6が2こ分。これで6等分したかけらを3こ集められるね。', '1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2'],
+      ['比例は何倍かを見る', 'y=4xなら、xが1から2に倍になると、yも4から8に倍になる。どちらの場合も y は x の4倍。', 'x = 1 → y = 4\nx = 2 → y = 8'],
+      ['平方を4つの積に分ける', '14の平方は14×14。両方を10と4に分けると、10×4と4×10の両方が出てくるよ。', '14² = (10+4)(10+4)\n= 100 + 40 + 40 + 16 = 196']
+    ]
+  ],
+  [
+    [
+      ['90°ずつ向きを追う', '(2,1) を90°ずつ回してみよう。180°では横も縦も反対。270°はそこからさらに90°だよ。', '(2, 1) → (−1, 2) → (−2, −1) → (1, −2)'],
+      ['横と縦を同じ倍率で変える', '(2,1) を2倍すると、右へ2が右へ4、上へ1が上へ2。原点から見た向きは同じだよ。', '(2, 1)×(2, 0) = (4, 2)']
+    ],
+    [
+      ['三角形を2枚つなぐ', '底辺6、高さ4の三角形を2枚合わせると、底辺6、高さ4の平行四辺形を作れる。三角形1枚の面積はその半分だよ。', '6×4 = 24\n24÷2 = 12'],
+      ['台形も2枚で考える', '上底3、下底7、高さ2の台形を2枚合わせると、底辺が3+7、高さが2の平行四辺形になる。最後に2で割ろう。', '(3+7)×2 = 20\n20÷2 = 10'],
+      ['円は半径を使う', '半径2なら、半径を一辺にした正方形の面積は4。円の面積はその約3.14倍だよ。', '2×2 = 4\n4×3.14 = 12.56']
+    ],
+    [
+      ['斜めを一辺とする正方形を作る', '横3、縦4の直角三角形を4枚使う。横と縦の辺を外側に並べて、斜めの辺4本で中央の正方形を囲もう。', '外側の正方形の一辺：3 + 4 = 7'],
+      ['まわりの三角形を取り除く', '外側の正方形の面積は49。三角形は1枚で6、4枚で24。残る正方形の面積は25だよ。', '7×7 − 4×(3×4÷2)\n= 49 − 24 = 25'],
+      ['横と縦の平方でも求まる', '外側の面積は (3+4)²。展開すると真ん中の2×3×4が、三角形4枚の面積と同じ。引くと3²と4²が残るよ。', '(3+4)² − 2×3×4 = 3² + 4²\n距離の2乗 = 9 + 16 = 25']
+    ],
+    [
+      ['累乗は同じ数を何回も掛ける', '(0,1) を1回掛けるごとに90°。右向きから4回掛けると、360°回って右向きに戻るよ。', '(1, 0) → (0, 1) → (−1, 0) → (0, −1) → (1, 0)\n(0, 1)⁴ = (1, 0)'],
+      ['反比例は積をそろえる', 'xy=18のとき、xが3なら y は6。xが6に倍になると、同じ積にするために y は3へ半分になるね。', '3×6 = 18\n6×3 = 18'],
+      ['平均は合計を均等に分ける', '2、4、9の平均を出そう。まず全部を足して15。3つ分なので、15を3で割るよ。', '2 + 4 + 9 = 15\n15÷3 = 5']
+    ]
+  ],
+  gradeSixSteps
+];
+
+const quizHints = [
+  ['8にあといくつ たすと10？ その数だけ5から分けよう。','13からまず3を ひいて10にしよう。あといくつ ひく？','62のなかに「10」がいくつ あるか かぞえよう。','右にすすむ数を先に、上にすすむ数を後に書こう。','「あ」が先のときと「い」が先のときを書いてみよう。'],
+  ['左と右の組から、横の数だけ取り出して足そう。縦も同じだよ。','横は6−2。縦は4から7を引くので、0を通りこすよ。','右に3から左へ進むよ。原点に着いてから、あと何マス？','6人に1こずつ配ると6こ減る。24こで何回配れる？','6を9回足す計算。6を10回足して、そこから6を1回分引いてもいいよ。'],
+  ['片方の13を10と3に分けよう。両方にもう片方の13を掛けるよ。','xの横に足した5を消すには、左右から何を引けばいい？','最初にかっこの中の2+6を計算しよう。','右へ4は上へ4に、上へ3は左へ3に変わるよ。','1Lは10dL。5dLは1Lを10等分したうちのいくつ分？'],
+  ['まず大きさだけを掛けよう。マイナスを掛けると向きはどう変わる？','1/2は、4等分したかけらがいくつ分かな？','横は横同士の積から縦同士の積を引く。縦は横×縦と縦×横を足すよ。','(0,1) は、右向きからすでに90°回った場所。もう一度90°回そう。','17を10と7に分けよう。(10+7)(10+7) の積は全部で4つ。'],
+  ['右向きは上へ、上向きは左へ。横と縦を別々に回そう。','90°を3回。回すたびに新しい場所を書いてみよう。','横の6と縦の8を、それぞれ2乗してから足そう。','台形2枚で平行四辺形を作ろう。底辺は上底と下底の合計だよ。','23を20と3に分けよう。20×3と3×20の両方が出てくるよ。'],
+  gradeSixHints
+];
+
+function renderGuidedTopics(topics, topicSteps) {
   let topic = 0;
   let step = 0;
-  const panel = $('#grade-six-step');
-  const previous = $('#grade-six-back');
-  const next = $('#grade-six-next');
-  const select = $('#grade-six-topic');
+  const panel = $('#guided-step');
+  const previous = $('#guided-back');
+  const next = $('#guided-next');
+  const select = $('#guided-topic');
   select.innerHTML = topics.map(([title], i) => `<option value="${i}">${i + 1}. ${title}</option>`).join('');
   function show() {
-    const steps = gradeSixSteps[topic];
+    const steps = topicSteps[topic];
     const [title, explanation, formula] = steps[step];
     select.value = topic;
     panel.innerHTML = `<p class="chapter">手順 ${step + 1} / ${steps.length}</p>
       <h3>${title}</h3><p>${explanation}</p><pre class="formula">${formula}</pre>`;
     previous.disabled = topic === 0 && step === 0;
-    next.disabled = topic === gradeSixSteps.length - 1 && step === steps.length - 1;
+    next.disabled = topic === topicSteps.length - 1 && step === steps.length - 1;
     next.textContent = step === steps.length - 1 && !next.disabled ? '次のテーマへ →' : '次の手順 →';
-    const formulaSummary = $('#grade-six-summary');
+    const formulaSummary = $('#guided-summary');
     formulaSummary.open = false;
+    formulaSummary.querySelector('p').textContent = topics[topic][1];
     formulaSummary.querySelector('pre').textContent = topics[topic][2];
   }
   function move(direction) {
     step += direction;
     if (step < 0) {
       topic--;
-      step = gradeSixSteps[topic].length - 1;
-    } else if (step === gradeSixSteps[topic].length) {
+      step = topicSteps[topic].length - 1;
+    } else if (step === topicSteps[topic].length) {
       topic++;
       step = 0;
     }
@@ -138,9 +251,10 @@ function renderGradeSixTopics(topics) {
 
 const calculationSheets = new Map();
 
-function mountCalculationSheet(question) {
-  if (!calculationSheets.has(question)) calculationSheets.set(question, []);
-  const strokes = calculationSheets.get(question);
+function mountCalculationSheet(chapter, question) {
+  const sheetKey = chapter + '-' + question;
+  if (!calculationSheets.has(sheetKey)) calculationSheets.set(sheetKey, []);
+  const strokes = calculationSheets.get(sheetKey);
   const paper = $('#calculation-paper');
   const undo = $('#calculation-undo');
   const clear = $('#calculation-clear');
@@ -203,18 +317,19 @@ function parseNumber(raw){const s=raw.normalize('NFKC').replace(/[−ー]/g,'-')
 function save(){try{localStorage.setItem(key,JSON.stringify({done:[...mastered]}));}catch{storageOK=false;}updateProgress();}
 function updateProgress(){ $('#total').textContent=mastered.size+' / 30';$('#progress').value=mastered.size;$('#saveStatus').textContent=storageOK?'学習状況はこのブラウザに保存されます。':'この環境では保存できません。このページを閉じるまで学習できます。';$('#grades').innerHTML=chapters.map((c,i)=>{const n=c.quiz.filter((_,j)=>mastered.has(i+'-'+j)).length;return `<button class="grade" data-grade="${i}" ${i===grade?'aria-current="step"':''}><b>小${i+1} <span>${n}/5${n===5?' ✓':''}</span></b><small>${c.short}</small></button>`;}).join('');}
 function slider(id,label,value,min=-6,max=6){return `<label for="${id}">${label}<output id="${id}v">${value}</output><input id="${id}" type="range" min="${min}" max="${max}" step="1" value="${value}"></label>`;}
-function render(focus=false){const c=chapters[grade];qi=0;$('#lesson').innerHTML=`<article class="card"><div class="lessonhead"><div><span class="chapter">CHAPTER 0${grade+1} ／ 小学${grade+1}年</span><h2>${c.name}</h2></div><span class="tag">読む → 試す → 解く</span></div><p class="lead">${c.lead}</p>${grade===5?`<div class="guided-lesson">
-  <label for="grade-six-topic">学ぶテーマ</label>
-  <select id="grade-six-topic"></select>
-  <section class="concept" id="grade-six-step" tabindex="-1" aria-live="polite"></section>
-  <div class="actions"><button class="btn" id="grade-six-back">← 前の手順</button>
-  <button class="btn primary" id="grade-six-next">次の手順 →</button></div>
-  <details class="concept" id="grade-six-summary">
-    <summary>このテーマの式をまとめて見る</summary>
+function render(focus=false){const c=chapters[grade];qi=0;$('#lesson').innerHTML=`<article class="card"><div class="lessonhead"><div><span class="chapter">CHAPTER 0${grade+1} ／ 小学${grade+1}年</span><h2>${c.name}</h2></div><span class="tag">読む → 試す → 解く</span></div><p class="lead">${c.lead}</p><div class="guided-lesson">
+  <label for="guided-topic">学ぶテーマ</label>
+  <select id="guided-topic"></select>
+  <section class="concept" id="guided-step" tabindex="-1" aria-live="polite"></section>
+  <div class="actions"><button class="btn" id="guided-back">← 前の手順</button>
+  <button class="btn primary" id="guided-next">次の手順 →</button></div>
+  <details class="concept" id="guided-summary">
+    <summary>このテーマのまとめを見る</summary>
+    <p></p>
     <pre class="formula"></pre>
   </details>
-</div>`:c.topics.map(([t,p,f],i)=>`<section class="concept"><h3>${i+1}. ${t}</h3><p>${p}</p><pre class="formula">${f}</pre></section>`).join('')}</article><section class="card" aria-labelledby="labtitle"><div class="labtop"><h3 id="labtitle">方眼の実験室</h3><span>数を変えて、動きを確かめよう</span></div><p class="hint" id="labhint"></p><div class="labgrid"><div class="graphbox"><svg id="graph" viewBox="0 0 400 400" role="img" aria-labelledby="graphTitle graphDesc"></svg><div class="legend"><span>● A：もとの点</span><span>◆ B：結果の点</span></div></div><div class="controls">${slider('a','Aの横',c.point[0],grade===0?0:-6)}${slider('b','Aの縦',c.point[1],grade===0?0:-6)}<div id="extra"></div><pre class="formula labresult" id="labresult" aria-live="polite"></pre></div></div></section><section class="card" aria-labelledby="quiztitle"><div class="quizhead"><h3 id="quiztitle">自分で解いてみよう</h3><span class="tag">5問</span></div><p class="hint">小数・負の数・分数（例：3/4）で入力できます。</p><div class="quizdots" id="quizdots" aria-label="問題を選ぶ"></div><div id="questionarea"></div></section><div class="pager"><button class="btn" id="prev" ${grade===0?'disabled':''}>${grade===0?"最初の学年":"← 小"+grade+"へ"}</button><button class="btn primary" id="next" ${grade===5?'disabled':''}>${grade===5?"最後の学年":"小"+(grade+2)+"へ →"}</button></div><p class="footnote">このページは課程の中心となる考え方を学ぶ入門です。全体の学習事項・追加の練習は、<a href="https://github.com/EC2045/torekimath/blob/main/index.md">教科書案</a>へ。</p>`;
-if (grade === 5) renderGradeSixTopics(c.topics);
+</div></article><section class="card" aria-labelledby="labtitle"><div class="labtop"><h3 id="labtitle">方眼の実験室</h3><span>数を変えて、動きを確かめよう</span></div><p class="hint" id="labhint"></p><div class="labgrid"><div class="graphbox"><svg id="graph" viewBox="0 0 400 400" role="img" aria-labelledby="graphTitle graphDesc"></svg><div class="legend"><span>● A：もとの点</span><span>◆ B：結果の点</span></div></div><div class="controls">${slider('a','Aの横',c.point[0],grade===0?0:-6)}${slider('b','Aの縦',c.point[1],grade===0?0:-6)}<div id="extra"></div><pre class="formula labresult" id="labresult" aria-live="polite"></pre></div></div></section><section class="card" aria-labelledby="quiztitle"><div class="quizhead"><h3 id="quiztitle">自分で解いてみよう</h3><span class="tag">5問</span></div><p class="hint">小数・負の数・分数（例：3/4）で入力できます。</p><div class="quizdots" id="quizdots" aria-label="問題を選ぶ"></div><div id="questionarea"></div></section><div class="pager"><button class="btn" id="prev" ${grade===0?'disabled':''}>${grade===0?"最初の学年":"← 小"+grade+"へ"}</button><button class="btn primary" id="next" ${grade===5?'disabled':''}>${grade===5?"最後の学年":"小"+(grade+2)+"へ →"}</button></div><p class="footnote">このページは課程の中心となる考え方を学ぶ入門です。全体の学習事項・追加の練習は、<a href="https://github.com/EC2045/torekimath/blob/main/index.md">教科書案</a>へ。</p>`;
+renderGuidedTopics(c.topics, lessonSteps[grade]);
 const mode=c.mode;$('#labhint').textContent={position:'横に進んでから、縦に進む道を描きます。横と縦の順番を確かめよう。',add:'Aに移動量を足す・引くと、Bはどこに来る？',rotate:'回す前に、Bがどこに来るか予想してみよう。',multiply:'(c,d)を掛けた結果を表示。まず(0,1)を試してみよう。',scale:'倍率と回転を変えて、向きと長さの変化を比べよう。',divide:'割る数の裏返しと襷を使います。(0,0)では割れません。表示は小数第4位までの概数です。'}[mode];
 if(['add','multiply','divide'].includes(mode))$('#extra').innerHTML= (mode==='add'?'<label for="op">計算<select id="op"><option value="add">足す ＋</option><option value="subtract">引く −</option></select></label>':'')+slider('c',mode==='add'?'移動量の横':'相手の横 c',mode==='divide'?0:1)+slider('d',mode==='add'?'移動量の縦':'相手の縦 d',1);
 if(['rotate','scale'].includes(mode))$('#extra').innerHTML='<label for="angle">反時計回りの角度<select id="angle"><option value="0">0°</option><option value="1" selected>90°</option><option value="2">180°</option><option value="3">270°</option><option value="4">360°</option></select></label>'+(mode==='scale'?slider('k','倍率',1,0,3):'');
@@ -224,14 +339,14 @@ function draw(){document.querySelectorAll('.controls input').forEach(el=>$('#'+e
 const bound=Math.max(6,Math.ceil(Math.max(Math.abs(a),Math.abs(b),...(result||[0,0]).map(Math.abs)))+1),step=Math.max(1,Math.ceil(bound/6)),lim=Math.ceil(bound/step)*step,s=160/lim,xy=([x,y])=>[200+x*s,200-y*s];let svg=`<title id="graphTitle">横と縦の方眼</title><desc id="graphDesc">${esc(description)}</desc>`;for(let t=-lim;t<=lim;t+=step){const pos=200+t*s;svg+=`<path d="M ${pos} 30 V 370 M 30 ${pos} H 370" stroke="#dfe6dc" stroke-width="1"/>`;if(t!==0)svg+=`<text x="${pos}" y="217" text-anchor="middle" font-size="10" fill="#62736b">${t}</text><text x="185" y="${200-t*s+4}" text-anchor="end" font-size="10" fill="#62736b">${t}</text>`;}svg+='<path d="M 25 200 H 375 M 200 375 V 25" stroke="#7f9589" stroke-width="1.5"/><text x="366" y="189" font-size="12" fill="#526b64">横</text><text x="210" y="30" font-size="12" fill="#526b64">縦</text><text x="186" y="217" font-size="10" fill="#526b64">0</text>';
 const [ax,ay]=xy([a,b]);if(m==='position')svg+=`<path d="M 200 200 H ${ax} V ${ay}" fill="none" stroke="#176d55" stroke-width="3" stroke-dasharray="6 4"/>`;else svg+=`<path d="M 200 200 L ${ax} ${ay}" stroke="#176d55" stroke-width="3"/>`;
 if(result&&m!=='position'){const [rx,ry]=xy(result);svg+=`<path d="M 200 200 L ${rx} ${ry}" stroke="#a34b1c" stroke-width="2.5" stroke-dasharray="6 4"/><path d="M ${rx} ${ry-7} l 7 7 -7 7 -7 -7 Z" fill="#a34b1c"/><text x="${rx+10}" y="${ry+18}" font-size="13" fill="#a34b1c">B</text>`;}svg+=`<circle cx="${ax}" cy="${ay}" r="5" fill="#176d55"/><text x="${ax+10}" y="${ay-10}" fill="#176d55" font-size="13">A</text>`;$('#graph').innerHTML=svg;}
-function renderQuestion(){revealed=false;const q=chapters[grade].quiz[qi];$('#quizdots').innerHTML=chapters[grade].quiz.map((_,i)=>`<button data-question="${i}" class="${mastered.has(grade+'-'+i)?'done':''}" ${qi===i?'aria-current="true"':''} aria-label="問題${i+1}${mastered.has(grade+'-'+i)?' 正解済み':''}">${i+1}</button>`).join('');$('#quizdots').querySelectorAll('button').forEach(b=>b.onclick=()=>{qi=Number(b.dataset.question);renderQuestion();});$('#questionarea').innerHTML=`<p class="question" id="questiontext">${qi+1}. ${q[0]}</p>${grade===5?`<section class="calculation-sheet" aria-labelledby="calculation-title">
+function renderQuestion(){revealed=false;const q=chapters[grade].quiz[qi];$('#quizdots').innerHTML=chapters[grade].quiz.map((_,i)=>`<button data-question="${i}" class="${mastered.has(grade+'-'+i)?'done':''}" ${qi===i?'aria-current="true"':''} aria-label="問題${i+1}${mastered.has(grade+'-'+i)?' 正解済み':''}">${i+1}</button>`).join('');$('#quizdots').querySelectorAll('button').forEach(b=>b.onclick=()=>{qi=Number(b.dataset.question);renderQuestion();});$('#questionarea').innerHTML=`<p class="question" id="questiontext">${qi+1}. ${q[0]}</p><section class="calculation-sheet" aria-labelledby="calculation-title">
   <h4 id="calculation-title">手書きの計算スペース</h4>
   <p class="hint">指・ペン・マウスで書けます。メモは問題ごとに、このページを開いている間残ります。</p>
   <svg class="calculation-paper" id="calculation-paper" viewBox="0 0 600 260" preserveAspectRatio="none" role="img" aria-label="手書き計算の方眼"></svg>
   <div class="actions"><button class="btn" id="calculation-undo">一筆戻す</button>
   <button class="btn" id="calculation-clear">全部消す</button></div>
-</section>`:''}<form id="answerform"><div class="answers">${q[1].map((_,i)=>`<label for="ans${i}">${q[1].length===2?(i===0?'横の答え':'縦の答え'):'答え'}<input id="ans${i}" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="${q[1].length===2?'例：−2、1/2':'数を入力'}" required aria-describedby="questiontext"></label>`).join('')}<button class="btn primary" type="submit">答え合わせ</button></div></form><div class="actions"><button class="btn" id="hintbtn">考え方のヒント</button><button class="btn" id="revealbtn">解き方を見る</button><button class="btn" id="nextq">${qi===4?'最初の問題へ':'次の問題 →'}</button></div><div id="feedback" class="feedback" role="status" aria-live="polite"></div>`;if (grade === 5) mountCalculationSheet(qi);
-$('#answerform').onsubmit=e=>{e.preventDefault();check();};$('#hintbtn').onclick=()=>feedback(grade===5?gradeSixHints[qi]:['10のまとまりと、横・縦の順番を思い出そう。','横同士、縦同士を計算。負の数は反対向きです。','かっこが先。回転は (x,y)→(−y,x)。','掛け算は (ac−bd,ad+bc)。分数は分母をそろえよう。','90°は (−y,x)、270°は (y,−x)。距離の2乗はx²+y²。'][grade]);$('#revealbtn').onclick=()=>{revealed=true;feedback('答え：'+(q[1].length===2?pair(q[1]):fmt(q[1][0]))+'\n'+q[2]+'\nこの問題は答えを見たので、解き直して正解すると達成になります。');};$('#nextq').onclick=()=>{qi=(qi+1)%5;renderQuestion();};}
+</section><form id="answerform"><div class="answers">${q[1].map((_,i)=>`<label for="ans${i}">${q[1].length===2?(i===0?'横の答え':'縦の答え'):'答え'}<input id="ans${i}" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="${q[1].length===2?'例：−2、1/2':'数を入力'}" required aria-describedby="questiontext"></label>`).join('')}<button class="btn primary" type="submit">答え合わせ</button></div></form><div class="actions"><button class="btn" id="hintbtn">考え方のヒント</button><button class="btn" id="revealbtn">解き方を見る</button><button class="btn" id="nextq">${qi===4?'最初の問題へ':'次の問題 →'}</button></div><div id="feedback" class="feedback" role="status" aria-live="polite"></div>`;mountCalculationSheet(grade, qi);
+$('#answerform').onsubmit=e=>{e.preventDefault();check();};$('#hintbtn').onclick=()=>feedback(quizHints[grade][qi]);$('#revealbtn').onclick=()=>{revealed=true;feedback('答え：'+(q[1].length===2?pair(q[1]):fmt(q[1][0]))+'\n'+q[2]+'\nこの問題は答えを見たので、解き直して正解すると達成になります。');};$('#nextq').onclick=()=>{qi=(qi+1)%5;renderQuestion();};}
 function feedback(message,error=false){$('#feedback').textContent=message;$('#feedback').classList.toggle('error',error);}
 function check(){const q=chapters[grade].quiz[qi],answers=q[1].map((_,i)=>parseNumber($('#ans'+i).value));if(answers.some(n=>n===null)){feedback('数を入力してください。分数は「3/4」のように書けます。0で割る分数は使えません。',true);return;}if(answers.every((n,i)=>Math.abs(n-q[1][i])<1e-8)){if(revealed){feedback('合っています！\n'+q[2]+'\n達成を記録するには、もう一度この問題を選んで、答えを見ずに解いてみよう。');}else{mastered.add(grade+'-'+qi);save();$('#quizdots').querySelector(`[data-question="${qi}"]`).classList.add('done');const complete=chapters[grade].quiz.every((_,i)=>mastered.has(grade+'-'+i));feedback('正解！\n'+q[2]+(complete?'\nこの学年の5問をすべて達成しました！':''));}}else feedback('もう一度考えてみよう。'+(q[1].length===2?'横と縦を別々に確かめてみてね。':'ヒントや上の説明を使ってみてね。'),true);}
 $('#grades').onclick=e=>{const b=e.target.closest('[data-grade]');if(b)navigate(Number(b.dataset.grade));};$('#reset').onclick=()=>{if(confirm('正解済みの記録をすべて消しますか？')){mastered.clear();save();render();}};const initial=location.hash.match(/^#grade-([1-6])$/);if(initial)grade=Number(initial[1])-1;render();
