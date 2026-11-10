@@ -6,6 +6,13 @@
 <title>東暦数学｜さわって学ぶ算数</title>
 <style>
 :root{--ink:#183d38;--muted:#526b64;--paper:#f5f3e9;--green:#176d55;--line:#d8dfd5;--orange:#a34b1c;--white:#fffef8}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.85}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button,a{ -webkit-tap-highlight-color:transparent}a{color:var(--green)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bf591f;outline-offset:4px}header{border-bottom:1px solid var(--line);padding:18px max(24px,calc((100vw - 1200px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px;background:var(--white)}.brand{font-size:20px;font-weight:850;letter-spacing:.1em}.brand span{font-size:12px;letter-spacing:.12em;color:var(--muted);display:block}.headlinks{font-size:13px;display:flex;gap:18px}.hero{max-width:1200px;margin:auto;padding:54px 24px 34px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:750;color:var(--green);margin:0 0 12px}h1{font-size:clamp(30px,5vw,52px);line-height:1.35;letter-spacing:-.04em;margin:0 0 18px}h1 em{font-style:normal;color:var(--green)}.intro{max-width:620px;color:var(--muted);margin:0}.overall{width:220px;padding:20px 24px;border-left:1px solid var(--line)}.overall strong{font-size:30px;display:block}.overall p{font-size:12px;margin:6px 0}progress{width:100%;height:7px;accent-color:var(--green)}.layout{max-width:1200px;padding:12px 24px 64px;margin:auto;display:grid;grid-template-columns:224px minmax(0,1fr);gap:30px}aside{align-self:start;position:sticky;top:18px}.navlabel{font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:12px}.grade{display:block;width:100%;padding:14px;text-align:left;border:1px solid transparent;border-bottom-color:var(--line);background:transparent;color:var(--ink);border-radius:8px}.grade:hover{background:#e9ede1}.grade[aria-current="step"]{background:var(--green);color:white;border-color:var(--green)}.grade b{font-size:15px;display:block}.grade small{font-size:11px;display:block}.navnote{font-size:12px;color:var(--muted);padding:14px 8px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:30px;margin-bottom:22px}.lessonhead{display:flex;gap:20px;justify-content:space-between;align-items:start}.chapter{color:var(--green);font-size:12px;font-weight:bold;letter-spacing:.12em}h2{font-size:27px;line-height:1.5;margin:7px 0 12px}h3{font-size:18px;margin:0 0 10px}.lead{color:var(--muted);margin:0 0 24px}.tag{border:1px solid var(--line);padding:4px 12px;border-radius:20px;white-space:nowrap;font-size:12px}.concept{padding:20px 0;border-top:1px solid var(--line)}.concept p{margin:5px 0}.formula{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;background:#edf2e9;border-left:3px solid var(--green);padding:14px 18px;border-radius:0 8px 8px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;margin:12px 0}.labtop{display:flex;align-items:center;justify-content:space-between;gap:12px}.labtop span{font-size:12px;color:var(--muted)}.labgrid{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;margin-top:18px}.graphbox{background:#f8faf5;border:1px solid var(--line);border-radius:12px;overflow:hidden}svg{width:100%;display:block;aspect-ratio:1}.legend{padding:10px 14px;font-size:12px;display:flex;gap:18px;border-top:1px solid var(--line)}.legend span:first-child{color:var(--green)}.legend span:last-child{color:var(--orange)}.controls label{display:block;font-size:13px;margin-bottom:12px}.controls input{width:100%;accent-color:var(--green);display:block}.controls select{width:100%;border:1px solid var(--line);border-radius:6px;padding:7px;background:white;color:var(--ink)}.controls output{font-weight:bold;float:right}.labresult{font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}.hint{font-size:13px;color:var(--muted)}.btn{border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 17px;border-radius:8px;font-weight:650;display:inline-block;text-decoration:none}.btn.primary{background:var(--green);color:white;border-color:var(--green)}.btn:hover{filter:brightness(.94)}.btn:disabled{opacity:.4;cursor:default}.quizhead{display:flex;justify-content:space-between;gap:10px;align-items:center}.quizdots{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.quizdots button{border:1px solid var(--line);border-radius:50%;width:35px;height:35px;background:white;color:var(--ink);font-size:13px}.quizdots button.done{background:#d9eadc;border-color:#79a48a}.quizdots button[aria-current="true"]{outline:2px solid var(--green);outline-offset:2px}.question{font-size:20px;font-weight:700;margin:18px 0}.answers{display:flex;align-items:end;gap:14px;flex-wrap:wrap}.answers label{font-size:13px;flex:1;min-width:100px;max-width:220px}.answers input{width:100%;border:1px solid #8b9c90;padding:9px 12px;border-radius:8px;background:white;color:var(--ink)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.feedback{margin-top:18px;padding:16px;border-radius:10px;background:#edf2e9;white-space:pre-wrap}.feedback.error{background:#fff0e5}.feedback:empty{display:none}.pager{display:flex;justify-content:space-between;gap:15px;margin-top:24px}.footnote{font-size:12px;color:var(--muted)}footer{max-width:1200px;margin:auto;padding:20px 24px 35px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.skip{position:absolute;left:10px;top:-100px;background:white;padding:12px;z-index:10}.skip:focus{top:10px}details{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}summary{cursor:pointer;font-weight:650}noscript p{margin:24px;padding:24px;background:#fff0e5}@media(max-width:900px){.labgrid{grid-template-columns:1fr}.controls{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}.labresult{grid-column:1/-1}.layout{grid-template-columns:180px minmax(0,1fr);gap:18px}.card{padding:23px}}@media(max-width:650px){header{padding:15px 18px}.headlinks{gap:10px;font-size:11px}.hero{padding:32px 18px 22px;grid-template-columns:1fr}.overall{width:100%;border-left:0;padding:0;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.overall strong{font-size:24px}.overall progress{width:100px}.overall p{margin:0}.layout{display:block;padding:0 14px 40px}aside{position:static;margin-bottom:20px}#grades{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.grade{padding:10px 8px;border:1px solid var(--line);min-height:75px}.grade small{font-size:10px}.navnote{display:none}.card{padding:20px 17px;border-radius:13px}.lessonhead{gap:8px}h2{font-size:23px}.tag{font-size:10px;padding:4px 8px}.labtop{align-items:start}.labtop span{max-width:110px}.formula{font-size:13px;padding:12px}.question{font-size:18px}}@media(prefers-reduced-motion:no-preference){.card{animation:appear .2s ease-out}@keyframes appear{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}}
+.guided-lesson select{max-width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}
+.guided-lesson .concept h3{margin-top:4px}
+.calculation-sheet{margin:16px 0 20px}
+.calculation-sheet h4{margin:0}
+.calculation-sheet .hint{margin:4px 0 10px}
+.calculation-paper{display:block;width:100%;height:clamp(240px,42vw,320px);border:1px solid var(--line);border-radius:10px;background-color:#fff;background-image:linear-gradient(#e4ece5 1px,transparent 1px),linear-gradient(90deg,#e4ece5 1px,transparent 1px);background-size:20px 20px;touch-action:none;user-select:none;cursor:crosshair}
+.calculation-paper path{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 </style>
 </head>
 <body>
@@ -46,13 +53,145 @@ const chapters=[
 ['距離の2乗を面積で考える','(3,4)までの斜めの長さを一辺にした正方形を考えます。7×7の正方形から、底辺3・高さ4の直角三角形4つを除くと、面積は49−24=25。だから斜めの長さの2乗は25です。','距離の2乗 = x²+y²\n3²+4² = 9+16 = 25'],
 ['累乗・反比例・平均','(0,1)の累乗は4回で(1,0)に戻ります。反比例xy=kは積が一定。平均は、合計を個数で割って求めます。','(0,1)⁴ = (1,0)\nxy=12：x=3ならy=4\n3,5,7の平均 = (3+5+7)÷3 = 5']
 ],quiz:[['(5,2)×(0,1) は？',[-2,5],'90°回転なので、(x,y)→(−y,x)。'],['(2,−3) を反時計回りに270°回すと？',[-3,-2],'270°回転は (x,y)→(y,−x)。'],['原点から(6,8)までの距離の2乗は？',[100],'6²+8²=36+64=100。距離そのものは10です。'],['上底4・下底6・高さ5の台形の面積は？',[25],'(4+6)×5÷2=25。'],['23² は？',[529],'(20+3)²=400+120+9=529。']]},
-{name:'割り算と平方根',short:'掛け算を元に戻す',lead:'裏返して掛けると、縦が消える。「襷」を使って、割り算までつなげよう。',mode:'divide',point:[5,1],topics:[
+{name:'割り算と平方根',short:'掛け算を元に戻す',lead:'まず「裏返し」から。途中式を一つずつ見て、自分のペースで進めよう。',mode:'divide',point:[5,1],topics:[
 ['裏返しと襷（たすき）','(c,d)の裏返しは(c,−d)。横軸に対して反対側に移します。2つを掛けると縦が0になり、横にc²+d²が残ります。この1つの数を襷と呼びます。','(c,d)×(c,−d) = (c²+d²,0)\n(3,4)×(3,−4) = (25,0)'],
 ['2次元数で割る','割る数の裏返しを掛け、横と縦をそれぞれ襷で割ります。割る数が(0,0)だと襷も0になるため、割れません。答えに割る数を掛けて検算します。','T = c²+d²\n(a,b)÷(c,d) = ((ac+bd)/T, (bc−ad)/T)\n(5,1)÷(0,1) = (1,−5)'],
 ['平方根と距離','√aは、2乗するとaになる0以上の数です（a≥0）。距離の2乗は襷と同じなので、距離は√襷。(1,1)の距離√2は1.41と1.42の間です。','距離 = √(x²+y²)\n(5,12)：√(25+144) = √169 = 13\n√0 = 0'],
 ['分数の乗除・体積・確率','分数で割るときは、割る数の分子と分母を入れ替えて掛けます。柱の体積は底面積×高さ。公平なコインを2回投げて表が1回だけ出るのは、表裏・裏表の2通りです。','3/4÷3/8 = 3/4×8/3 = 2\n直方体：たて×よこ×高さ\n表が1回だけの確率 = 2/4 = 1/2']
 ],quiz:[['(7,1)÷(1,2) は？',[1.8,-2.6],'襷は1²+2²=5。横は(7+2)/5=9/5、縦は(1−14)/5=−13/5。'],['(1,0)÷(1,1) は？',[0.5,-0.5],'襷は2。横は1/2、縦は−1/2。'],['√289 は？',[17],'17×17=289なので√289=17。'],['原点から(8,15)までの距離は？',[17],'距離は√(8²+15²)=√289=17。'],['たて3・よこ4・高さ5の直方体の体積は？',[60],'3×4×5=60。']]}
 ];
+const gradeSixSteps = [
+  [
+    ['縦の符号を変える', '例は (1,2)。横の1はそのまま。上に2の場所を、下に2の場所へ移すよ。', '(1, 2) → (1, −2)'],
+    ['積の横だけ計算する', '小4の掛け算を使うよ。横は「横同士の積 − 縦同士の積」。2×(−2) は −4 だから、−4 を引くと4を足すことになる。', '1×1 − 2×(−2)\n= 1 − (−4) = 5'],
+    ['積の縦だけ計算する', '縦は「横×縦 ＋ 縦×横」。−2 と 2 が打ち消し合って、縦が0になる。横に残った5を「襷（たすき）」と呼ぶよ。', '1×(−2) + 2×1 = −2 + 2 = 0\n(1, 2)×(1, −2) = (5, 0)\n襷 = 1² + 2² = 5']
+  ],
+  [
+    ['割る数だけ裏返す', '例は (5,1)÷(1,2)。割る数 (1,2) を裏返すと (1,−2)。さっき求めた襷は5だったね。', '割る数の裏返し： (1, −2)\n襷 = 5'],
+    ['なぜ裏返しを掛ける？', '答えに (1,2) を掛けると (5,1) に戻るはず。この式の両側に (1,−2) を掛けると、左側の (1,2) と (1,−2) がまとまって (5,0) になる。(5,0) を掛けるのは普通の5倍だよ。', '答え × (1, 2) = (5, 1)\n答え × (5, 0) = (5, 1) × (1, −2)'],
+    ['右側の積の横を求める', 'まず横だけ計算しよう。掛け算の結果の横は7。', '5×1 − 1×(−2) = 5 + 2 = 7'],
+    ['右側の積の縦を求める', '次に縦だけ計算しよう。結果は −9。これで「答えを5倍すると (7,−9)」と分かった。', '5×(−2) + 1×1 = −10 + 1 = −9'],
+    ['横も縦も5で割る', '5倍を元に戻すには、横と縦をそれぞれ5で割ればいい。分数のままでもOK。', '(7÷5, −9÷5)\n= (7/5, −9/5) = (1.4, −1.8)'],
+    ['掛けて答えを確かめる', '答えに割る数 (1,2) を掛けて、もとの (5,1) に戻ればOK。割る数が (0,0) のときは、襷が0になるので割れないよ。', '(7/5, −9/5) × (1, 2)\n= ((7 + 18)/5, (14 − 9)/5)\n= (5, 1)']
+  ],
+  [
+    ['2乗の反対を考える', '4×4 は16。反対に「0以上で、自分自身を掛けたら16になる数は？」と聞かれたら答えは4。これを √16 と書くよ。', '4² = 16 → √16 = 4'],
+    ['距離の2乗を求める', '原点から (5,12) までの距離を考えるよ。小5で使った「横の2乗＋縦の2乗」で、まず距離の2乗を求めよう。', '5² + 12² = 25 + 144 = 169'],
+    ['距離そのものに戻す', '「何を2乗すると169になる？」と考えよう。13×13 が169だから、距離は13。ぴったりの整数が見つからないときは、√2 のように書けるよ。', '√169 = 13\n1.41² < 2 < 1.42² → 1.41 < √2 < 1.42']
+  ],
+  [
+    ['分数で割る', '3/4÷3/8 では、割る数の3/8を8/3にひっくり返す。次に、分子同士と分母同士を掛けよう。', '3/4÷3/8 = 3/4×8/3\n= 24/12 = 2'],
+    ['底面から体積を求める', 'たて2、よこ3、高さ4の直方体なら、まず底面の長方形の面積を出そう。その面積に高さを掛けると体積になる。', '底面積 = 2×3 = 6\n体積 = 6×4 = 24'],
+    ['起こり方を数える', '公平なコインを2回投げると、表表・表裏・裏表・裏裏の4通りが同じ確率で起こるよ。表がちょうど1回なのは表裏と裏表の2通り。', '表がちょうど1回の確率 = 2/4 = 1/2']
+  ]
+];
+const gradeSixHints = [
+  'まず割る数 (1,2) の縦の符号だけを変えてみよう。割られる数は例題と違うけど、襷は同じだよ。',
+  'まず (1,1) を裏返そう。襷は 1²＋1²。横と縦は別々に計算してみよう。',
+  'どの数を自分自身に掛けたら289になる？ 16²と18²の間を調べてみよう。',
+  'まず 8²＋15² で距離の2乗を求めよう。そのあと平方根で距離に戻そう。',
+  'まず たて×よこ で底面積を出そう。次に高さを掛けてみよう。'
+];
+
+function renderGradeSixTopics(topics) {
+  let topic = 0;
+  let step = 0;
+  const panel = $('#grade-six-step');
+  const previous = $('#grade-six-back');
+  const next = $('#grade-six-next');
+  const select = $('#grade-six-topic');
+  select.innerHTML = topics.map(([title], i) => `<option value="${i}">${i + 1}. ${title}</option>`).join('');
+  function show() {
+    const steps = gradeSixSteps[topic];
+    const [title, explanation, formula] = steps[step];
+    select.value = topic;
+    panel.innerHTML = `<p class="chapter">手順 ${step + 1} / ${steps.length}</p>
+      <h3>${title}</h3><p>${explanation}</p><pre class="formula">${formula}</pre>`;
+    previous.disabled = topic === 0 && step === 0;
+    next.disabled = topic === gradeSixSteps.length - 1 && step === steps.length - 1;
+    next.textContent = step === steps.length - 1 && !next.disabled ? '次のテーマへ →' : '次の手順 →';
+    const formulaSummary = $('#grade-six-summary');
+    formulaSummary.open = false;
+    formulaSummary.querySelector('pre').textContent = topics[topic][2];
+  }
+  function move(direction) {
+    step += direction;
+    if (step < 0) {
+      topic--;
+      step = gradeSixSteps[topic].length - 1;
+    } else if (step === gradeSixSteps[topic].length) {
+      topic++;
+      step = 0;
+    }
+    show();
+    if (document.activeElement.disabled) panel.focus();
+  }
+  select.onchange = () => {
+    topic = Number(select.value);
+    step = 0;
+    show();
+  };
+  previous.onclick = () => move(-1);
+  next.onclick = () => move(1);
+  show();
+}
+
+const calculationSheets = new Map();
+
+function mountCalculationSheet(question) {
+  if (!calculationSheets.has(question)) calculationSheets.set(question, []);
+  const strokes = calculationSheets.get(question);
+  const paper = $('#calculation-paper');
+  const undo = $('#calculation-undo');
+  const clear = $('#calculation-clear');
+  let activePointer = null;
+  let activePath;
+
+  function addPath(data) {
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', data);
+    paper.append(path);
+    return path;
+  }
+  function redraw() {
+    paper.replaceChildren();
+    strokes.forEach(addPath);
+    undo.disabled = clear.disabled = strokes.length === 0 || activePointer !== null;
+  }
+  function point(event) {
+    const box = paper.getBoundingClientRect();
+    return [(event.clientX - box.left) * 600 / box.width,
+      (event.clientY - box.top) * 260 / box.height].map(value => value.toFixed(1)).join(' ');
+  }
+  paper.onpointerdown = event => {
+    if (activePointer !== null || event.button !== 0) return;
+    event.preventDefault();
+    paper.setPointerCapture(event.pointerId);
+    activePointer = event.pointerId;
+    const start = point(event);
+    activePath = addPath(`M ${start} L ${start}`);
+    undo.disabled = clear.disabled = true;
+  };
+  paper.onpointermove = event => {
+    if (event.pointerId !== activePointer) return;
+    activePath.setAttribute('d', activePath.getAttribute('d') + ' L ' + point(event));
+  };
+  function finish(event) {
+    if (event.pointerId !== activePointer) return;
+    strokes.push(activePath.getAttribute('d'));
+    activePointer = null;
+    undo.disabled = clear.disabled = false;
+  }
+  paper.onpointerup = paper.onpointercancel = paper.onlostpointercapture = finish;
+  undo.onclick = () => { strokes.pop(); redraw(); };
+  clear.onclick = () => {
+    if (!confirm('この問題の計算メモを消しますか？')) return;
+    strokes.length = 0;
+    redraw();
+  };
+  redraw();
+}
+
 const $=s=>document.querySelector(s),key='torekimath-learning-v1';
 let grade=0,qi=0,revealed=false,storageOK=true,mastered=new Set();
 try{const saved=JSON.parse(localStorage.getItem(key)||'{}');if(Array.isArray(saved.done)) mastered=new Set(saved.done.filter(x=>/^([0-5])-([0-4])$/.test(x)));}catch{storageOK=false;}
@@ -64,7 +203,18 @@ function parseNumber(raw){const s=raw.normalize('NFKC').replace(/[−ー]/g,'-')
 function save(){try{localStorage.setItem(key,JSON.stringify({done:[...mastered]}));}catch{storageOK=false;}updateProgress();}
 function updateProgress(){ $('#total').textContent=mastered.size+' / 30';$('#progress').value=mastered.size;$('#saveStatus').textContent=storageOK?'学習状況はこのブラウザに保存されます。':'この環境では保存できません。このページを閉じるまで学習できます。';$('#grades').innerHTML=chapters.map((c,i)=>{const n=c.quiz.filter((_,j)=>mastered.has(i+'-'+j)).length;return `<button class="grade" data-grade="${i}" ${i===grade?'aria-current="step"':''}><b>小${i+1} <span>${n}/5${n===5?' ✓':''}</span></b><small>${c.short}</small></button>`;}).join('');}
 function slider(id,label,value,min=-6,max=6){return `<label for="${id}">${label}<output id="${id}v">${value}</output><input id="${id}" type="range" min="${min}" max="${max}" step="1" value="${value}"></label>`;}
-function render(focus=false){const c=chapters[grade];qi=0;$('#lesson').innerHTML=`<article class="card"><div class="lessonhead"><div><span class="chapter">CHAPTER 0${grade+1} ／ 小学${grade+1}年</span><h2>${c.name}</h2></div><span class="tag">読む → 試す → 解く</span></div><p class="lead">${c.lead}</p>${c.topics.map(([t,p,f],i)=>`<section class="concept"><h3>${i+1}. ${t}</h3><p>${p}</p><pre class="formula">${f}</pre></section>`).join('')}</article><section class="card" aria-labelledby="labtitle"><div class="labtop"><h3 id="labtitle">方眼の実験室</h3><span>数を変えて、動きを確かめよう</span></div><p class="hint" id="labhint"></p><div class="labgrid"><div class="graphbox"><svg id="graph" viewBox="0 0 400 400" role="img" aria-labelledby="graphTitle graphDesc"></svg><div class="legend"><span>● A：もとの点</span><span>◆ B：結果の点</span></div></div><div class="controls">${slider('a','Aの横',c.point[0],grade===0?0:-6)}${slider('b','Aの縦',c.point[1],grade===0?0:-6)}<div id="extra"></div><pre class="formula labresult" id="labresult" aria-live="polite"></pre></div></div></section><section class="card" aria-labelledby="quiztitle"><div class="quizhead"><h3 id="quiztitle">自分で解いてみよう</h3><span class="tag">5問</span></div><p class="hint">小数・負の数・分数（例：3/4）で入力できます。</p><div class="quizdots" id="quizdots" aria-label="問題を選ぶ"></div><div id="questionarea"></div></section><div class="pager"><button class="btn" id="prev" ${grade===0?'disabled':''}>${grade===0?"最初の学年":"← 小"+grade+"へ"}</button><button class="btn primary" id="next" ${grade===5?'disabled':''}>${grade===5?"最後の学年":"小"+(grade+2)+"へ →"}</button></div><p class="footnote">このページは課程の中心となる考え方を学ぶ入門です。全体の学習事項・追加の練習は、<a href="https://github.com/EC2045/torekimath/blob/main/index.md">教科書案</a>へ。</p>`;
+function render(focus=false){const c=chapters[grade];qi=0;$('#lesson').innerHTML=`<article class="card"><div class="lessonhead"><div><span class="chapter">CHAPTER 0${grade+1} ／ 小学${grade+1}年</span><h2>${c.name}</h2></div><span class="tag">読む → 試す → 解く</span></div><p class="lead">${c.lead}</p>${grade===5?`<div class="guided-lesson">
+  <label for="grade-six-topic">学ぶテーマ</label>
+  <select id="grade-six-topic"></select>
+  <section class="concept" id="grade-six-step" tabindex="-1" aria-live="polite"></section>
+  <div class="actions"><button class="btn" id="grade-six-back">← 前の手順</button>
+  <button class="btn primary" id="grade-six-next">次の手順 →</button></div>
+  <details class="concept" id="grade-six-summary">
+    <summary>このテーマの式をまとめて見る</summary>
+    <pre class="formula"></pre>
+  </details>
+</div>`:c.topics.map(([t,p,f],i)=>`<section class="concept"><h3>${i+1}. ${t}</h3><p>${p}</p><pre class="formula">${f}</pre></section>`).join('')}</article><section class="card" aria-labelledby="labtitle"><div class="labtop"><h3 id="labtitle">方眼の実験室</h3><span>数を変えて、動きを確かめよう</span></div><p class="hint" id="labhint"></p><div class="labgrid"><div class="graphbox"><svg id="graph" viewBox="0 0 400 400" role="img" aria-labelledby="graphTitle graphDesc"></svg><div class="legend"><span>● A：もとの点</span><span>◆ B：結果の点</span></div></div><div class="controls">${slider('a','Aの横',c.point[0],grade===0?0:-6)}${slider('b','Aの縦',c.point[1],grade===0?0:-6)}<div id="extra"></div><pre class="formula labresult" id="labresult" aria-live="polite"></pre></div></div></section><section class="card" aria-labelledby="quiztitle"><div class="quizhead"><h3 id="quiztitle">自分で解いてみよう</h3><span class="tag">5問</span></div><p class="hint">小数・負の数・分数（例：3/4）で入力できます。</p><div class="quizdots" id="quizdots" aria-label="問題を選ぶ"></div><div id="questionarea"></div></section><div class="pager"><button class="btn" id="prev" ${grade===0?'disabled':''}>${grade===0?"最初の学年":"← 小"+grade+"へ"}</button><button class="btn primary" id="next" ${grade===5?'disabled':''}>${grade===5?"最後の学年":"小"+(grade+2)+"へ →"}</button></div><p class="footnote">このページは課程の中心となる考え方を学ぶ入門です。全体の学習事項・追加の練習は、<a href="https://github.com/EC2045/torekimath/blob/main/index.md">教科書案</a>へ。</p>`;
+if (grade === 5) renderGradeSixTopics(c.topics);
 const mode=c.mode;$('#labhint').textContent={position:'横に進んでから、縦に進む道を描きます。横と縦の順番を確かめよう。',add:'Aに移動量を足す・引くと、Bはどこに来る？',rotate:'回す前に、Bがどこに来るか予想してみよう。',multiply:'(c,d)を掛けた結果を表示。まず(0,1)を試してみよう。',scale:'倍率と回転を変えて、向きと長さの変化を比べよう。',divide:'割る数の裏返しと襷を使います。(0,0)では割れません。表示は小数第4位までの概数です。'}[mode];
 if(['add','multiply','divide'].includes(mode))$('#extra').innerHTML= (mode==='add'?'<label for="op">計算<select id="op"><option value="add">足す ＋</option><option value="subtract">引く −</option></select></label>':'')+slider('c',mode==='add'?'移動量の横':'相手の横 c',mode==='divide'?0:1)+slider('d',mode==='add'?'移動量の縦':'相手の縦 d',1);
 if(['rotate','scale'].includes(mode))$('#extra').innerHTML='<label for="angle">反時計回りの角度<select id="angle"><option value="0">0°</option><option value="1" selected>90°</option><option value="2">180°</option><option value="3">270°</option><option value="4">360°</option></select></label>'+(mode==='scale'?slider('k','倍率',1,0,3):'');
@@ -74,7 +224,14 @@ function draw(){document.querySelectorAll('.controls input').forEach(el=>$('#'+e
 const bound=Math.max(6,Math.ceil(Math.max(Math.abs(a),Math.abs(b),...(result||[0,0]).map(Math.abs)))+1),step=Math.max(1,Math.ceil(bound/6)),lim=Math.ceil(bound/step)*step,s=160/lim,xy=([x,y])=>[200+x*s,200-y*s];let svg=`<title id="graphTitle">横と縦の方眼</title><desc id="graphDesc">${esc(description)}</desc>`;for(let t=-lim;t<=lim;t+=step){const pos=200+t*s;svg+=`<path d="M ${pos} 30 V 370 M 30 ${pos} H 370" stroke="#dfe6dc" stroke-width="1"/>`;if(t!==0)svg+=`<text x="${pos}" y="217" text-anchor="middle" font-size="10" fill="#62736b">${t}</text><text x="185" y="${200-t*s+4}" text-anchor="end" font-size="10" fill="#62736b">${t}</text>`;}svg+='<path d="M 25 200 H 375 M 200 375 V 25" stroke="#7f9589" stroke-width="1.5"/><text x="366" y="189" font-size="12" fill="#526b64">横</text><text x="210" y="30" font-size="12" fill="#526b64">縦</text><text x="186" y="217" font-size="10" fill="#526b64">0</text>';
 const [ax,ay]=xy([a,b]);if(m==='position')svg+=`<path d="M 200 200 H ${ax} V ${ay}" fill="none" stroke="#176d55" stroke-width="3" stroke-dasharray="6 4"/>`;else svg+=`<path d="M 200 200 L ${ax} ${ay}" stroke="#176d55" stroke-width="3"/>`;
 if(result&&m!=='position'){const [rx,ry]=xy(result);svg+=`<path d="M 200 200 L ${rx} ${ry}" stroke="#a34b1c" stroke-width="2.5" stroke-dasharray="6 4"/><path d="M ${rx} ${ry-7} l 7 7 -7 7 -7 -7 Z" fill="#a34b1c"/><text x="${rx+10}" y="${ry+18}" font-size="13" fill="#a34b1c">B</text>`;}svg+=`<circle cx="${ax}" cy="${ay}" r="5" fill="#176d55"/><text x="${ax+10}" y="${ay-10}" fill="#176d55" font-size="13">A</text>`;$('#graph').innerHTML=svg;}
-function renderQuestion(){revealed=false;const q=chapters[grade].quiz[qi];$('#quizdots').innerHTML=chapters[grade].quiz.map((_,i)=>`<button data-question="${i}" class="${mastered.has(grade+'-'+i)?'done':''}" ${qi===i?'aria-current="true"':''} aria-label="問題${i+1}${mastered.has(grade+'-'+i)?' 正解済み':''}">${i+1}</button>`).join('');$('#quizdots').querySelectorAll('button').forEach(b=>b.onclick=()=>{qi=Number(b.dataset.question);renderQuestion();});$('#questionarea').innerHTML=`<p class="question" id="questiontext">${qi+1}. ${q[0]}</p><form id="answerform"><div class="answers">${q[1].map((_,i)=>`<label for="ans${i}">${q[1].length===2?(i===0?'横の答え':'縦の答え'):'答え'}<input id="ans${i}" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="${q[1].length===2?'例：−2、1/2':'数を入力'}" required aria-describedby="questiontext"></label>`).join('')}<button class="btn primary" type="submit">答え合わせ</button></div></form><div class="actions"><button class="btn" id="hintbtn">考え方のヒント</button><button class="btn" id="revealbtn">解き方を見る</button><button class="btn" id="nextq">${qi===4?'最初の問題へ':'次の問題 →'}</button></div><div id="feedback" class="feedback" role="status" aria-live="polite"></div>`;$('#answerform').onsubmit=e=>{e.preventDefault();check();};$('#hintbtn').onclick=()=>feedback(['10のまとまりと、横・縦の順番を思い出そう。','横同士、縦同士を計算。負の数は反対向きです。','かっこが先。回転は (x,y)→(−y,x)。','掛け算は (ac−bd,ad+bc)。分数は分母をそろえよう。','90°は (−y,x)、270°は (y,−x)。距離の2乗はx²+y²。','襷c²+d²を求めてみよう。距離は√(x²+y²)。'][grade]);$('#revealbtn').onclick=()=>{revealed=true;feedback('答え：'+(q[1].length===2?pair(q[1]):fmt(q[1][0]))+'\n'+q[2]+'\nこの問題は答えを見たので、解き直して正解すると達成になります。');};$('#nextq').onclick=()=>{qi=(qi+1)%5;renderQuestion();};}
+function renderQuestion(){revealed=false;const q=chapters[grade].quiz[qi];$('#quizdots').innerHTML=chapters[grade].quiz.map((_,i)=>`<button data-question="${i}" class="${mastered.has(grade+'-'+i)?'done':''}" ${qi===i?'aria-current="true"':''} aria-label="問題${i+1}${mastered.has(grade+'-'+i)?' 正解済み':''}">${i+1}</button>`).join('');$('#quizdots').querySelectorAll('button').forEach(b=>b.onclick=()=>{qi=Number(b.dataset.question);renderQuestion();});$('#questionarea').innerHTML=`<p class="question" id="questiontext">${qi+1}. ${q[0]}</p>${grade===5?`<section class="calculation-sheet" aria-labelledby="calculation-title">
+  <h4 id="calculation-title">手書きの計算スペース</h4>
+  <p class="hint">指・ペン・マウスで書けます。メモは問題ごとに、このページを開いている間残ります。</p>
+  <svg class="calculation-paper" id="calculation-paper" viewBox="0 0 600 260" preserveAspectRatio="none" role="img" aria-label="手書き計算の方眼"></svg>
+  <div class="actions"><button class="btn" id="calculation-undo">一筆戻す</button>
+  <button class="btn" id="calculation-clear">全部消す</button></div>
+</section>`:''}<form id="answerform"><div class="answers">${q[1].map((_,i)=>`<label for="ans${i}">${q[1].length===2?(i===0?'横の答え':'縦の答え'):'答え'}<input id="ans${i}" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="${q[1].length===2?'例：−2、1/2':'数を入力'}" required aria-describedby="questiontext"></label>`).join('')}<button class="btn primary" type="submit">答え合わせ</button></div></form><div class="actions"><button class="btn" id="hintbtn">考え方のヒント</button><button class="btn" id="revealbtn">解き方を見る</button><button class="btn" id="nextq">${qi===4?'最初の問題へ':'次の問題 →'}</button></div><div id="feedback" class="feedback" role="status" aria-live="polite"></div>`;if (grade === 5) mountCalculationSheet(qi);
+$('#answerform').onsubmit=e=>{e.preventDefault();check();};$('#hintbtn').onclick=()=>feedback(grade===5?gradeSixHints[qi]:['10のまとまりと、横・縦の順番を思い出そう。','横同士、縦同士を計算。負の数は反対向きです。','かっこが先。回転は (x,y)→(−y,x)。','掛け算は (ac−bd,ad+bc)。分数は分母をそろえよう。','90°は (−y,x)、270°は (y,−x)。距離の2乗はx²+y²。'][grade]);$('#revealbtn').onclick=()=>{revealed=true;feedback('答え：'+(q[1].length===2?pair(q[1]):fmt(q[1][0]))+'\n'+q[2]+'\nこの問題は答えを見たので、解き直して正解すると達成になります。');};$('#nextq').onclick=()=>{qi=(qi+1)%5;renderQuestion();};}
 function feedback(message,error=false){$('#feedback').textContent=message;$('#feedback').classList.toggle('error',error);}
 function check(){const q=chapters[grade].quiz[qi],answers=q[1].map((_,i)=>parseNumber($('#ans'+i).value));if(answers.some(n=>n===null)){feedback('数を入力してください。分数は「3/4」のように書けます。0で割る分数は使えません。',true);return;}if(answers.every((n,i)=>Math.abs(n-q[1][i])<1e-8)){if(revealed){feedback('合っています！\n'+q[2]+'\n達成を記録するには、もう一度この問題を選んで、答えを見ずに解いてみよう。');}else{mastered.add(grade+'-'+qi);save();$('#quizdots').querySelector(`[data-question="${qi}"]`).classList.add('done');const complete=chapters[grade].quiz.every((_,i)=>mastered.has(grade+'-'+i));feedback('正解！\n'+q[2]+(complete?'\nこの学年の5問をすべて達成しました！':''));}}else feedback('もう一度考えてみよう。'+(q[1].length===2?'横と縦を別々に確かめてみてね。':'ヒントや上の説明を使ってみてね。'),true);}
 $('#grades').onclick=e=>{const b=e.target.closest('[data-grade]');if(b)navigate(Number(b.dataset.grade));};$('#reset').onclick=()=>{if(confirm('正解済みの記録をすべて消しますか？')){mastered.clear();save();render();}};const initial=location.hash.match(/^#grade-([1-6])$/);if(initial)grade=Number(initial[1])-1;render();
